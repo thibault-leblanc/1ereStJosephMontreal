@@ -1,15 +1,21 @@
-<!-- Calendrier -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendrier</title>
+    <title>Calendrier - 1ère Saint Joseph de Montréal</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Calendrier</h1>
+        <div class="logo">
+            <img src="img/logo_fne.png" alt="Logo FNE">
+        </div>
+        <h1>Calendrier des Activités</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -19,16 +25,37 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <h2>Événements à venir</h2>
-        <ul>
-            <li>15 mars 2025 - Sortie en forêt</li>
-            <li>10 avril 2025 - Campement de printemps</li>
-            <li>5 mai 2025 - Randonnée exploratoire</li>
-        </ul>
+        <div id="calendar"></div>
     </main>
+
     <footer>
-        <p>&copy; 2025 1ère Saint Joseph de Montréal - FNE</p>
+        <p>&copy; 2025 1ère Saint Joseph de Montréal - FNE | Contact: info@fneexplorers.com</p>
     </footer>
+
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'fr',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                events: [
+                    { title: 'Sortie en forêt', start: '2025-03-15' },
+                    { title: 'Campement de printemps', start: '2025-04-10', end: '2025-04-12' },
+                    { title: 'Randonnée exploratoire', start: '2025-05-05' }
+                ]
+            });
+            calendar.render();
+        });
+    </script>
 </body>
 </html>
