@@ -1,32 +1,38 @@
-/* Styles généraux */
-body {
-    font-family: Arial, sans-serif;
+/* Styles de base */
+* {
     margin: 0;
     padding: 0;
-    background-color: #57a9e7f2;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-/* Header */
 header {
-    background-color: #004d00;
+    background-color: #00796b;
     color: white;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
 }
 
 header .logo img {
-    width: 80px;
-    height: auto;
+    max-width: 120px;
+}
+
+header h1 {
+    margin: 10px 0;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
@@ -34,74 +40,74 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 18px;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Hero Section */
 .hero {
-    text-align: center;
-    padding: 50px 20px;
-    background: url('img/scouts_camp.jpg') no-repeat center center/cover;
+    background: url('img/hero-image.jpg') no-repeat center center;
+    background-size: cover;
     color: white;
+    padding: 100px 20px;
+    text-align: center;
+    transition: opacity 2s ease-in-out;
 }
 
 .hero h2 {
     font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
 .hero p {
     font-size: 1.2rem;
 }
 
-/* Main Content */
 main {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-/* Galerie */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.gallery img {
-    width: 250px;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer */
-footer {
-    background-color: #004d00;
-    color: white;
+    padding: 50px 20px;
     text-align: center;
-    padding: 10px;
+}
+
+.about {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.about img {
+    width: 100%;
+    height: auto;
     margin-top: 20px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .gallery {
-        flex-direction: column;
-        align-items: center;
-    }
+.about. animate {
+    opacity: 1;
+}
 
-    nav ul {
-        display: flex;
-        flex-direction: column;
-    }
+.highlights .gallery {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
 
-    nav ul li {
-        margin: 5px 0;
-    }
+.highlights .gallery img {
+    width: 30%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #00796b;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 0.9rem;
 }
