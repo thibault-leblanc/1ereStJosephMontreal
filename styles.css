@@ -11,41 +11,38 @@ body {
     color: #333;
 }
 
+/* HEADER */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     background-color: white;
-    color: black; 
-}
-
-header .logo {
-    margin-right: 15px;
+    color: black;
 }
 
 header .logo img {
-    max-width: 300px;
+    max-width: 200px; /* Taille ajustée */
     height: auto;
 }
 
 header h1 {
-    font-size: 2rem; 
+    font-size: 2rem;
     margin: 0;
 }
 
+/* NAVIGATION */
 nav {
     background-color: #001b77;
     padding: 10px 0;
-    text-align: left;
+    text-align: center;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
-    justify-content: flex-end;
-    margin-right: 20px;
+    justify-content: center;
 }
 
 nav ul li {
@@ -59,6 +56,7 @@ nav ul li a {
     font-size: 18px;
 }
 
+/* HERO */
 .hero {
     background: url('img/fond.jpg') no-repeat center center;
     background-size: cover;
@@ -70,89 +68,16 @@ nav ul li a {
 }
 
 .hero .hero-content {
-    background: rgba(255, 255, 255, 0.100); /* Légère transparence */
-    backdrop-filter: blur(20px); /* Flou plus doux */
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
     padding: 40px;
-    border-radius: 25px; /* Coins plus arrondis */
+    border-radius: 15px;
     display: inline-block;
-    max-width: 80%;
+    max-width: 90%;
     margin: auto;
-    /*box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre douce pour plus de relief */
 }
 
-.hero .hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0;
-    width: 5%; /* Ajuste la largeur selon le besoin */
-    max-width: 600px; /* Empêche une image trop grande */
-    height: auto;
-    border-radius: 20px; /* Coins arrondis */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombre floutée pour adoucir les bords */
-    object-fit: cover; /* Assure que l'image reste bien cadrée */
-}
-
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-}
-
-
-main {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.about {
-    background-color: #ffffff;
-    padding: 40px 20px;
-    margin-top: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.about img {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-}
-
-.about animate {
-    opacity: 1;
-}
-
-.highlights .gallery {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-}
-
-.highlights .gallery img {
-    width: 30%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-    background-color: #001b77;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-footer p {
-    font-size: 0.9rem;
-}
+/* GALLERY */
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -171,13 +96,61 @@ footer p {
 .gallery-item img {
     width: 100%;
     height: auto;
-    border-bottom: 2px solid #00796b;
 }
 
-.gallery-item p {
-    padding: 10px;
-    font-size: 1rem;
-    color: #333;
-    background-color: #f7f7f7;
-    margin: 0;
+/* FOOTER */
+footer {
+    background-color: #001b77;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    /* Empilage du logo, du titre et du menu */
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .logo img {
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* GALLERY */
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
 }
