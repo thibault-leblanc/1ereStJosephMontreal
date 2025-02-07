@@ -44,7 +44,7 @@ nav ul li a {
 }
 
 .hero {
-    background: url('img/hero-image.jpg') no-repeat center center;
+    background: url('img/fond.jpg') no-repeat center center;
     background-size: cover;
     color: white;
     padding: 100px 20px;
@@ -81,7 +81,7 @@ main {
     margin-top: 20px;
 }
 
-.about. animate {
+.about animate {
     opacity: 1;
 }
 
