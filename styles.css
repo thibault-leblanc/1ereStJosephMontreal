@@ -66,6 +66,31 @@ nav ul li a {
     padding: 100px 20px;
     text-align: center;
     transition: opacity 2s ease-in-out;
+    position: relative;
+}
+
+.hero .hero-content {
+    background: rgba(255, 255, 255, 0.100); /* Légère transparence */
+    backdrop-filter: blur(20px); /* Flou plus doux */
+    padding: 40px;
+    border-radius: 25px; /* Coins plus arrondis */
+    display: inline-block;
+    max-width: 80%;
+    margin: auto;
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre douce pour plus de relief */
+}
+
+.hero .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0;
+    width: 5%; /* Ajuste la largeur selon le besoin */
+    max-width: 600px; /* Empêche une image trop grande */
+    height: auto;
+    border-radius: 20px; /* Coins arrondis */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Ombre floutée pour adoucir les bords */
+    object-fit: cover; /* Assure que l'image reste bien cadrée */
 }
 
 .hero h2 {
@@ -76,6 +101,7 @@ nav ul li a {
 .hero p {
     font-size: 1.2rem;
 }
+
 
 main {
     padding: 50px 20px;
