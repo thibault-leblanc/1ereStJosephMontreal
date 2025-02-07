@@ -12,27 +12,43 @@ body {
 }
 
 header {
-    background-color: #00796b;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+    color: black; 
+}
+
+header .logo {
+    margin-right: 15px;
 }
 
 header .logo img {
-    max-width: 120px;
+    max-width: 300px;
+    height: auto;
 }
 
 header h1 {
-    margin: 10px 0;
+    font-size: 2rem; 
+    margin: 0;
+}
+
+nav {
+    background-color: #001b77;
+    padding: 10px 0;
+    text-align: left;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
 }
 
 nav ul li {
-    display: inline-block;
     margin: 0 15px;
 }
 
@@ -46,7 +62,7 @@ nav ul li a {
 .hero {
     background: url('img/fond.jpg') no-repeat center center;
     background-size: cover;
-    color: white;
+    color: black;
     padding: 100px 20px;
     text-align: center;
     transition: opacity 2s ease-in-out;
@@ -99,7 +115,7 @@ main {
 }
 
 footer {
-    background-color: #00796b;
+    background-color: #001b77;
     color: white;
     text-align: center;
     padding: 10px 0;
