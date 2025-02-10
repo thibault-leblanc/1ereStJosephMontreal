@@ -9,29 +9,105 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    text-align: center; /* Centre tout le texte par défaut */
+    text-align: center;
+    position: relative;
 }
 
-/* Conteneur global pour centrer le contenu */
-.container {
-    max-width: 1200px; /* Empêche le contenu d'être trop large */
-    margin: 0 auto; /* Centre horizontalement */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    position: relative;
+    z-index: 2;
+}
+
+/* Content section qui prend toute la largeur dans les marges */
+.content-section {
+    width: calc(100% - 30%);  /* Retirer les marges latérales (15% de chaque côté) */
+    margin: 0 auto;
+    padding: 40px;
+    text-align: left;
+    background-color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.content-section-wide {
+    width: 100vw;  /* Prendre toute la largeur de la fenêtre */
+    position: relative;
+    left: 50%;  /* Centrer par rapport à la fenêtre */
+    transform: translateX(-50%);  /* Recentrer exactement en tenant compte des marges */
+    padding: 40px;
+    text-align: left;
+    background-color: white;
+    z-index: 2;  /* S'assurer que cela reste par-dessus les autres sections */
+}
+
+/* Image section-wide qui prend toute la largeur de l'écran mais dans les marges */
+.image-section-wide {
+    width: 100%;  /* Utiliser la largeur complète sans dépasser */
+    max-width: calc(100% - 30%);  /* Retirer les marges latérales */
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 3;
+}
+
+.image-section-wide img {
+    width: 100%;  /* L'image s'ajuste à la largeur */
+    display: block;
+}
+/* Image section (remains the same, inside the margins) */
+.image-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.image-section img {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajout de marges latérales avec images de fond */
+body::before, body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    background-image: url('img/fond.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+body::before {
+    left: 0;
+}
+
+body::after {
+    right: 0;
 }
 
 /* HEADER */
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Garde tout sur une ligne */
+    justify-content: space-between;
     padding: 20px;
     background-color: white;
     color: black;
-    flex-wrap: wrap; /* Permet d'éviter les débordements */
-}
-
-header .logo {
-    flex: 0 0 auto; /* Le logo garde sa taille */
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
 }
 
 header .logo img {
@@ -40,7 +116,7 @@ header .logo img {
 }
 
 header h1 {
-    flex: 1; /* Prend tout l’espace disponible */
+    flex: 1;
     font-size: 2rem;
     margin: 0;
     text-align: center;
@@ -52,15 +128,15 @@ header h1 {
 
 /* NAVIGATION */
 nav {
-    flex: 0 0 auto;
     background-color: #001b77;
     padding: 10px;
     border-radius: 5px;
+    position: relative;
+    z-index: 2;
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -84,8 +160,8 @@ nav ul li a {
     color: black;
     padding: 100px 20px;
     text-align: center;
-    transition: opacity 2s ease-in-out;
     position: relative;
+    z-index: 2;
 }
 
 .hero .hero-content {
@@ -95,19 +171,6 @@ nav ul li a {
     border-radius: 15px;
     display: inline-block;
     max-width: 90%;
-    margin: auto;
-}
-
-/* SECTIONS */
-main {
-    padding: 50px 20px;
-}
-
-.about {
-    padding: 40px;
-    margin: 30px auto;
-    width: 90%;
-    max-width: 800px;
 }
 
 /* GALLERY */
@@ -118,6 +181,8 @@ main {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
+    position: relative;
+    z-index: 2;
 }
 
 .gallery-item {
@@ -133,14 +198,16 @@ main {
     height: auto;
 }
 
-/* FORMULAIRE DE CONTACT */
+/* CONTACT BOX */
 .contact-box {
     background-color: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-    margin: 0 auto;
+    margin: 40px auto;
+    position: relative;
+    z-index: 2;
 }
 
 .contact-box h2 {
@@ -197,24 +264,26 @@ footer {
     text-align: center;
     padding: 20px 0;
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Espace entre le texte et les icônes */
-    flex-wrap: wrap; /* Permet de passer à la ligne si l'espace est insuffisant */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 footer p {
-    margin: 0; /* Supprime la marge par défaut du paragraphe */
+    margin: 0;
 }
 
 /* Icônes des réseaux sociaux */
 .social-icons {
     display: flex;
-    gap: 15px; /* Espace entre les icônes */
+    gap: 15px;
 }
 
 .social-icons a {
@@ -224,71 +293,5 @@ footer p {
 }
 
 .social-icons a:hover {
-    color: #0033cc; /* Changement de couleur au survol */
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Passe en colonne sur mobile */
-        align-items: center; /* Centre les éléments */
-        text-align: center;
-    }
-
-    header .logo img {
-        max-width: 150px;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-        white-space: normal; /* Permet au titre de se mettre sur plusieurs lignes */
-        word-break: break-word; /* Coupe le texte si besoin */
-    }
-
-    /* Menu reste horizontal */
-    nav ul {
-        flex-wrap: wrap;
-    }
-
-    /* HERO */
-    .hero {
-        padding: 60px 20px;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    /* GALLERY */
-    .gallery-container {
-        grid-template-columns: 1fr;
-    }
-
-    /* FORMULAIRE DE CONTACT */
-    .contact-box {
-        padding: 20px;
-    }
-
-    .contact-box h2 {
-        font-size: 1.5rem;
-    }
-
-    .contact-box input,
-    .contact-box textarea {
-        font-size: 0.9rem;
-    }
-
-    .contact-box button {
-        font-size: 0.9rem;
-    }
-
-    /* FOOTER */
-    .footer-content {
-        flex-direction: column; /* Texte et icônes en colonne sur mobile */
-        gap: 10px;
-    }
+    color: #0033cc;
 }
