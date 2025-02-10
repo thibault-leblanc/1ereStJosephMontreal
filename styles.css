@@ -121,7 +121,7 @@ body::after {
     margin-right: auto;
 }
 
-.bubble {
+.bubble-jaune {
     position: relative;
     width: 120px;
     height: 120px;
@@ -130,20 +130,20 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 4px solid #001b77; /* Contour coloré */
+    border: 4px solid #f5e94d; /* Contour coloré */
     background-color: white;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
 
-.bubble img {
+.bubble-jaune img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Permet le zoom */
     transition: opacity 0.3s ease-in-out;
 }
 
-.bubble .bubble-content {
+.bubble-jaune .bubble-content {
     position: absolute;
     top: 0;
     left: 0;
@@ -153,8 +153,8 @@ body::after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 27, 119, 0.8); /* Fond semi-transparent */
-    color: white;
+    /*background-color: rgba(0, 27, 119, 0.8); /* Fond semi-transparent */
+    color: black;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
@@ -162,18 +162,129 @@ body::after {
     transition: opacity 0.3s ease-in-out;
 }
 
-.bubble .bubble-content img {
+.bubble-jaune .bubble-content img {
     width: 40px;
     height: 40px;
     margin-bottom: 5px;
     filter: invert(1); /* Inverser la couleur du logo si nécessaire */
 }
 
-.bubble:hover img {
+.bubble-jaune:hover img {
     opacity: 0;
 }
 
-.bubble:hover .bubble-content {
+.bubble-jaune:hover .bubble-content {
+    opacity: 1;
+}
+
+.bubble-verte {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #81c636; /* Contour coloré */
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.bubble-verte img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Permet le zoom */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.bubble-verte .bubble-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*background-color: rgba(0, 27, 119, 0.8); /* Fond semi-transparent */
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.bubble-verte .bubble-content img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+    filter: invert(1); /* Inverser la couleur du logo si nécessaire */
+}
+
+.bubble-verte:hover img {
+    opacity: 0;
+}
+
+.bubble-verte:hover .bubble-content {
+    opacity: 1;
+}
+.bubble-rouge {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #be0033; /* Contour coloré */
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.bubble-rouge img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Permet le zoom */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.bubble-rouge .bubble-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*background-color: rgba(0, 27, 119, 0.8); /* Fond semi-transparent */
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.bubble-rouge .bubble-content img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+    filter: invert(1); /* Inverser la couleur du logo si nécessaire */
+}
+
+.bubble-rouge:hover img {
+    opacity: 0;
+}
+
+.bubble-rouge:hover .bubble-content {
     opacity: 1;
 }
 
