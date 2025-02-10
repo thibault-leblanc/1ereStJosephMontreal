@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="55" class="o_shape_anim_random_1739221916318">
+    <defs>
+        <clipPath id="clip-path" clipPathUnits="objectBoundingBox">
+            <use xlink:href="#filterPath" fill="none"/>
+        </clipPath>
+        <path id="filterPath" d="M 0 0 L 0 1 L 1 1 L 1 0 L 0 0Z">
+        </path>
+    </defs>
+    
+    <image xlink:href="data:image/webp;base64,UklGRk4GAABXRUJQVlA4WAoAAAAwAAAANgAANgAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBI0QEAAA2QLUm2aVt9bNu2bds2r23btm3bb7Zt27aNNdcYPxAREwCxyh4u9iaGXxW/3n156fRzELVKT474DgDKULbWd7N6tnnfTgIRrX0h0cglO0pn/vKn8sR3NIbQoPq4laM+iTMe6QDhFi1zhq4Uld8HsroPeN3yi5DBXpC7caPG5wQsBcGgCV33S1oDkvpb+m2VsBJUN/Q6+18DQFZzTeWL/8gMpgPr4dX/0p8EyplOk/4xBrTHTLz1lxAfYipDu/xlGKiX3DgKINCAHLqMAtAO9AuO3YZxAgOVioXIA8f89Yhn4f9SIYKFUoTzDxbwcQVPDzsm1sZMzE2Y6Ckz+arERPGJCY+vj015PHhiwuPxdUcel89a67M49/ZyIItD2JbE4f4DbMjjsA449yqSwXIAU1rRO/sSwOpoc3IDAODz8L7ULp/+A9PiPYi1w98bzaG1Gv88sKcrpSc9/oVueZGEyvC/ubPMyHTEfz+rWalNZAgkHu+w1ojEkA9ScLzNpEACnSDwUoNWVXLdbAWhnxqpDTGXZekYiJ47rmlrBWEnB0HGpwN3tSo2FLJ/2lnIe2by/qQiXz0JN9dv+gj5769a8yjA1c3J2FgRb5/cv3ht/0uIBABWUDgghgIAABARAJ0BKjcANwA+jTyXR6UjoiEuGSxwoBGJbACnTgFZ3eP9u/FX2VKY/bfu5lL/Px+V+6rtM+YB+kH+b6kvmA/Xn1vfRz6AH6yejl7HPoAfsB6WP7hfBP+1v7O+zJ/4QhWvtTYto6YW0U8n5lKqKopZpJgY36XbcdGFth7PtaQGUKdhjKaVWMOQLrejpoCAigAA/v72Xf95D1/0/juX/X4H9C/9UYljxCws2qP9Uy/rmd9TPq9+/iz6eM16aYrb7bXFLvOJhXSZW9sHc3Cu3V3IxtXl+DEVP7t0h88xGYuxWL4hWgLPmzCAfyEu6AWYuwmr8NSnJm95YNfzhF4iW03vAawqY/2MD//+1xFEKvc9T48gHu8xnWZg3WN4E6bLKJGTqfpvarvRHmqvRVoCYrHLL2OpqGXmBg7ednxtANSJeDI/mTHGvFqakh625+CbsfDeigMyHeYMva1466cNlgx8WTVhHG1liKabVC3UzCHAAHs+7n4X2Qur0/mtdUlw2gDkFcegvDDvN7v/ng1emCFJYAZip29u01Rd4L+zquOHwq0uYtObnjzmwOI8t9xoQyqAda8McRgQ5yBdVFqe1corbtnCD+Zcv6mkwAFm7RDpHQ1K3B4wLgIt7ktBTfxGrcE2x00gEhZA6yFM1Qqz8jbz4J4YThnc25nWebmD/5pBvQn8L9w1aXlklIE+mRG+wcV5vdZddk2eYTpvodv5N///tcUdaLxDAHkILuwS1UbWh66Nl3i3evc98oI/Nl+gMIPMceTtYwUVXsvfYKIeHczquHpFW44uvaB8GudsCl+F7d4a6sqgfH27pAvh80h6H/YOLYtHKCwbk9i/yzUMz//VowYA7AA=" clip-path="url(#clip-path)"/>
+<svg viewBox="0 0 1 1" preserveAspectRatio="none">
+            <use id="shapeOverlay" xlink:href="#filterPath" fill="rgb(0,0,0)" fill-opacity="0"/>
+        </svg><g id="hoverEffects">
+            <animate xlink:href="#shapeOverlay" attributeName="fill-opacity" values="0;0.5" keyTimes="0;1" keySplines="0.5 0 0.5 1" dur="0.3" fill="freeze" repeatCount="1"/>
+        </g></svg>
