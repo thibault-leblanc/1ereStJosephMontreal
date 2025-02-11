@@ -7,8 +7,81 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="script.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer>
+        async function loadGallery() {
+        const galleryDiv = document.getElementById("gallery");
+        
+        // Affiche un message pendant le chargement
+        galleryDiv.innerHTML = "<p class='loading-text'>Chargement de la galerie...</p>";
+
+        try {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbzxlItveRHe7XuofgBejkz2lMXZxn5YsskInbUj4-3u6ygKXnVSHXxbTzkQa_3uiwwNYA/exec"); // Remplace par ton URL Apps Script
+            const albums = await response.json();
+
+            // Supprime le message de chargement dès qu'on a les albums
+            galleryDiv.innerHTML = "";
+
+            albums.forEach(album => {
+                // Création immédiate de l'album (sans photos)
+                let albumDiv = document.createElement("div");
+                albumDiv.classList.add("album");
+                albumDiv.innerHTML = `<h2>${album.album}</h2><div class="photos"></div>`;
+                galleryDiv.appendChild(albumDiv);
+
+                let photosDiv = albumDiv.querySelector(".photos");
+
+                album.photos.forEach(photo => {
+                    let imgContainer = document.createElement("div");
+                    imgContainer.classList.add("photo-container");
+
+                    // Icône de chargement pour chaque photo
+                    let loader = document.createElement("div");
+                    loader.classList.add("loader");
+                    imgContainer.appendChild(loader);
+
+                    // Chargement progressif des images
+                    let img = new Image();
+                    img.src = photo.thumbnail;
+                    img.alt = "Photo de l'album " + album.album;
+                    img.classList.add("thumbnail");
+
+                    img.onload = () => {
+                        imgContainer.innerHTML = ""; // Supprime le loader
+                        imgContainer.appendChild(img);
+                    };
+
+                    // Clic pour afficher l’image en haute résolution
+                    img.addEventListener("click", () => {
+                        let overlay = document.createElement("div");
+                        overlay.classList.add("overlay");
+
+                        let fullImg = new Image();
+                        fullImg.src = photo.full;
+                        fullImg.classList.add("full-image");
+
+                        overlay.appendChild(fullImg);
+                        document.body.appendChild(overlay);
+
+                        // Fermer l’image au clic
+                        overlay.addEventListener("click", () => {
+                            document.body.removeChild(overlay);
+                        });
+                    });
+
+                    photosDiv.appendChild(imgContainer);
+                });
+            });
+
+        } catch (error) {
+            galleryDiv.innerHTML = "<p class='error-text'>Erreur de chargement de la galerie.</p>";
+            console.error("Erreur de chargement de la galerie :", error);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadGallery);
+
+
+    </script>
 </head>
 <body>
     <header>
@@ -32,22 +105,7 @@
         <section class="gallery">
             <h2>Galerie Photos</h2>
             <p>Découvrez nos activités à travers ces photos.</p>
-            <iframe src="https://photos.google.com/share/AF1QipN9tROpJaW2PT4OPv0fIOPFQWOcHrJ2SXfcjhGA0NqNN19bbb4pTvu5frkgwxoOzQ" width="100%" height="600px" style="border:none;"></iframe>
-            <!--<div class="gallery-container">
-                <div class="gallery-item">
-                    <img src="https://drive.google.com/drive/folders/1ImxdBaCpTG9eZSluNlqjuE1kcMzVDWG9" alt="Campement en forêt">
-                    <p>Campement en forêt</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://drive.google.com/uc?id=1ABC234DEFGH5678IJKL9MNOPQRSTU" alt="Atelier de construction">
-                    <p>Atelier de construction</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://drive.google.com/uc?id=1XYZ0987ABCDEF4567GHIJKLM8NOPQ" alt="Exploration en montagne">
-                    <p>Exploration en montagne</p>
-                </div>-->
-                <!-- Ajouter plus d'images ici -->
-            </div>
+            <div id="gallery"></div>
         </section>
     </main>
 
