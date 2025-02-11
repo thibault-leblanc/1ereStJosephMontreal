@@ -18,16 +18,26 @@
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="presentation.html">Présentation</a></li>
+                <li>
+                    <a href="#" id="presentation-menu">Présentation <i class="fas fa-chevron-down"></i></a>
+                    <ul id="sous-menu">
+                        <li><a href="presentation.html">Présentation</a></li>
+                        <li><a href="histoire.html">Histoire</a></li>
+                        <li><a href="unites.html">Unités</a></li>
+                    </ul>
+                </li>
                 <li><a href="galerie.html">Galerie</a></li>
                 <li><a href="calendrier.html">Calendrier</a></li>
                 <li><a href="inscription.html">S'inscrire</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <button id="menu-toggle" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
 
-    <main>
+    <main class="page-container">
         <section class="image-section-wide">
             <img src="img/groupe.jpg" alt="Campement scout" >
         </section>
@@ -41,7 +51,7 @@
             <p>La Fédération des Explorateurs de l'Amérique du Nord (FNE) aide les jeunes à devenir des saints dans leur vie quotidienne.</p>
         </section>
         <section class="image-section-wide">
-            <img src="img/groupe.jpg" alt="Activité scout">
+            <img src="img/louvettesloin.jpg" alt="Activité scout">
         </section>
         <section class="content-section">  
             <h2 align="center">À chaque âge son aventure</h2>

@@ -1,19 +1,31 @@
-// Exemple simple de script.js pour des fonctionnalités interactives
-document.addEventListener("DOMContentLoaded", function() {
-    // Animation de la section héro
-    const hero = document.querySelector('.hero');
-    hero.style.opacity = '0';
-    setTimeout(() => {
-        hero.style.transition = 'opacity 2s ease-in-out';
-        hero.style.opacity = '1';
-    }, 500);
+document.addEventListener("DOMContentLoaded", function () {
+    const presentationMenu = document.getElementById("presentation-menu");
+    const sousMenu = document.getElementById("sous-menu");
+    const menuToggle = document.getElementById("menu-toggle");
+    const nav = document.querySelector("nav ul");
 
-    // Ajouter une fonction d'animation sur le scroll
-    const aboutSection = document.querySelector('.about');
-    window.addEventListener('scroll', function() {
-        const sectionPosition = aboutSection.getBoundingClientRect().top;
-        if (sectionPosition < window.innerHeight) {
-            aboutSection.classList.add('animate');
+    // Gestion du menu déroulant "Présentation"
+    presentationMenu.addEventListener("click", function (e) {
+        e.preventDefault(); // Empêcher le lien de rediriger
+        sousMenu.classList.toggle("active"); // Basculer la classe "active"
+    });
+
+    // Fermer le sous-menu si on clique ailleurs
+    document.addEventListener("click", function (e) {
+        if (!e.target.closest("#presentation-menu") && !e.target.closest("#sous-menu")) {
+            sousMenu.classList.remove("active");
+        }
+    });
+
+    // Gestion du menu responsive
+    menuToggle.addEventListener("click", function () {
+        nav.classList.toggle("active");
+    });
+
+    // Fermer le menu si on clique ailleurs (pour mobile)
+    document.addEventListener("click", function (e) {
+        if (!e.target.closest("nav") && !e.target.closest("#menu-toggle")) {
+            nav.classList.remove("active");
         }
     });
 });
